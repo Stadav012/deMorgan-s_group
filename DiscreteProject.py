@@ -15,10 +15,10 @@ def visualization():
 window = Tk() #Instantiate an instance of a window
 window.geometry("1020x700")
 window.config(background="#CACAAA")
-window.title("Set Operation")
+window.title("Set Visualizer")
 
 
-Welcome_label = Label(window, text="Welcome to Set Visualisation",font=('Arial', 40, 'bold'),fg='#D36135',bg="#CACAAA",border=50) #Creates a text label on the window
+Welcome_label = Label(window, text="Welcome to Set Visualizer",font=('Arial', 40, 'bold'),fg='#D36135',bg="#CACAAA",border=50) #Creates a text label on the window
 User_action = Label(window,text="Choose one of the set operators below",font=('Arial', 40, 'bold'),fg='#D36135',bg="#CACAAA",padx=20)
 Welcome_label.grid() #Center the label variable
 User_action.grid()
@@ -49,6 +49,9 @@ second_text = Label(window, text="Enter Set 2: ",bg="#CACAAA",fg="#D36135",font=
 second_text_entry = Entry(window).grid() #Creates a new entry widget (a single line input field)
 
 submitButton = Button(window, text="Visualise",width=10,bg="#25CED1",fg='white',command=visualization).grid() #Creates a submit button
+
+
+
 
 
 window.mainloop() # places window on computer screen and listens for events
