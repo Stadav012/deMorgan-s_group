@@ -4,17 +4,21 @@ from Diagram import *;
 options = ["Intersection", "Union", "Complement", "Difference"]
 
 def visualization():
-    set_a = set(map(int,first_text_entry.get().split()))
-    set_b = set(map(int,second_text_entry.get().split()))
-    diagram = Diagram()
-    if x.get() == 0:
-        diagram.draw_venn(set_a, set_b, "intersection")
-    elif x.get() == 1:
-        diagram.draw_venn(set_a, set_b, "union")
-    elif x.get() == 2:
-        diagram.draw_venn(set_a,set_b, "complement")
-    elif x.get() == 3:
-        diagram.draw_venn(set_a,set_b, "difference")
+    try:
+        set_a = set(map(str,first_text_entry.get().split()))
+        set_b = set(map(str,second_text_entry.get().split()))
+
+        diagram = Diagram()
+        if x.get() == 0:
+            diagram.draw_venn(set_a, set_b, "intersection")
+        elif x.get() == 1:
+            diagram.draw_venn(set_a, set_b, "union")
+        elif x.get() == 2:
+            diagram.draw_venn(set_a,set_b, "complement")
+        elif x.get() == 3:
+            diagram.draw_venn(set_a,set_b, "difference")
+    except:
+        Label(window, text="Invalid input entered. Try again and look at the example above",font=('Arial', 40, 'bold'),fg='#D36135',bg="#CACAAA",border=50).grid()
 
 window = Tk() #Instantiate an instance of a window
 window.geometry("1020x700")
@@ -46,11 +50,11 @@ for i in range(len(options)):
 
 
 
-first_text = Label(window, text="Enter Set 1: ",bg="#CACAAA",fg="#D36135",font=('Arial', 15, 'bold')).grid() #Creates label
+first_text = Label(window, text="Enter elments of Set 1 seperated by a space: ",bg="#CACAAA",fg="#D36135",font=('Arial', 15, 'bold')).grid() #Creates label
 first_text_entry = Entry(window)
 first_text_entry.grid()#Creates a new entry widget (a single line input field)
 
-second_text = Label(window, text="Enter Set 2: ",bg="#CACAAA",fg="#D36135",font=('Arial', 15, 'bold')).grid()
+second_text = Label(window, text="Enter elments of Set 2 seperated by a space: ",bg="#CACAAA",fg="#D36135",font=('Arial', 15, 'bold')).grid()
 second_text_entry = Entry(window) #Creates a new entry widget (a single line input field)
 second_text_entry.grid()
 

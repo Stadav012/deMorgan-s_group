@@ -66,7 +66,7 @@ class Diagram():
 
             # Create a rectangle that represents the universal set
             universal_rect = patches.Rectangle(
-                (-1.75, -1.75), 3.5, 3.5, linewidth=2, edgecolor="r", facecolor="pink"
+                (-2.5, -2.5), 5, 5, linewidth=2, edgecolor="r", facecolor="pink"
             )
             ax.add_patch(universal_rect)
 
